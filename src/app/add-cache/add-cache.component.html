@@ -1,3 +1,17 @@
-<p>
-  add-cache works!
-</p>
+<hr>
+
+<h1>Add a Geocache</h1>
+
+<form>
+  <div class="latLongGroup">
+    <input type="text" name="lat" placeholder="enter latitude" #newLat>
+    <input type="text" name="long" placeholder="enter longitude" #newLong>
+    <button (click)="submitLatLong(newLat.value, newLong.value)">submit</button>
+    <h3>Address: {{apiResponse.results[0].formatted_address}}</h3>
+  </div>
+  <h3>OR</h3>
+  <div class="addressGroup">
+    <input type="text" name="address" placeholder="enter address" #newAddress>
+  </div>
+  <br>
+</form>
