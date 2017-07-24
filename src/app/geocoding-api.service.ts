@@ -14,4 +14,8 @@ export class GeocodingAPIService {
     return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key="+geoKey);
   }
 
+  getCoords(creator: string, address:string): Observable<any> {
+    return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+geoKey);
+  }
+
 }

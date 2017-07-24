@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { GeocodingAPIService } from '../geocoding-api.service';
 
 @Component({
@@ -7,11 +7,10 @@ import { GeocodingAPIService } from '../geocoding-api.service';
   styleUrls: ['./list-cache.component.scss'],
   providers: [GeocodingAPIService]
 })
-export class ListCacheComponent implements OnInit {
 
+export class ListCacheComponent {
+  @Input() childApiResponse;
   constructor() { }
 
-  ngOnInit() {
-  }
 
 }

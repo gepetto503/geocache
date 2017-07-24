@@ -1,5 +1,3 @@
-<h1>GeoCache On Smash</h1>
+<h1>list of geocaches</h1>
 
-<h3>here's a gang of geocaches all across the map</h3>
-
-<app-add-cache></app-add-cache>
+<h3 *ngIf="childApiResponse">Address: {{childApiResponse.results[0].formatted_address}}</h3>

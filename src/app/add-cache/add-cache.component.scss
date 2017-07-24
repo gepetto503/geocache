@@ -1,0 +1,14 @@
+.flex-parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .form-child, .list-child {
+    padding: 20px;
+    border: solid 1px lightgrey;
+    border-radius: 3px;
+    margin: 20px;
+    // flex-basis: 600px;
+  }
+
+
+}

@@ -1,17 +1,37 @@
-<hr>
-
 <h1>Add a Geocache</h1>
 
-<form>
-  <div class="latLongGroup">
-    <input type="text" name="lat" placeholder="enter latitude" #newLat>
-    <input type="text" name="long" placeholder="enter longitude" #newLong>
-    <button (click)="submitLatLong(newLat.value, newLong.value)">submit</button>
-    <h3>Address: {{apiResponse.results[0].formatted_address}}</h3>
+<div class="flex-parent">
+
+  <div class="form-child">
+    <form>
+      <h3>create geocache using coordinates</h3>
+      <input type="text" name="creator" placeholder="enter your name" #newCreator>
+      <input type="text" name="lat" placeholder="enter latitude" #newLat>
+      <input type="text" name="long" placeholder="enter longitude" #newLong>
+      <button (click)="getAddress(newCreator, newLat.value, newLong.value)">submit</button>
+    </form>
   </div>
-  <h3>OR</h3>
-  <div class="addressGroup">
+
+  <div class="form-child">
+    <form>
+      <h3>create geocache using street address</h3>
+      <input type="text" name="creator" placeholder="enter your name" #newCreator>
+      <input type="text" name="address" placeholder="enter address" #newAddress>
+      <button (click)="getCoords(newCreator.value, newAddress.value)">submit</button>
+    </form>
+  </div>
+
+  <div *ngIf="apiResponse">
+    <app-list-cache [childApiResponse]="apiResponse"></app-list-cache>
+  </div>
+
+    <!-- <h3>create new Geocache</h3>
+    <input type="text" name="creator" placeholder="enter your name" #newCreator>
+    <br><br>
     <input type="text" name="address" placeholder="enter address" #newAddress>
-  </div>
-  <br>
-</form>
+    <br><br>
+    <input type="text" name="lat" placeholder="enter latitude" #newLat>
+    <br><br>
+    <input type="text" name="long" placeholder="enter longitude" #newLong>
+    <br><br>
+    <button (click)="createGeo(newCreator, newAddress, newLat, newLong)">create geocache</button> -->

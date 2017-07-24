@@ -11,7 +11,7 @@ import { DetailCacheComponent } from './detail-cache/detail-cache.component';
 const appRoutes: Routes = [
   {
     path: '',
-    component: ListCacheComponent
+    component: AddCacheComponent
   },
 ];
 
